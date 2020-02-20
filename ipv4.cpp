@@ -90,7 +90,7 @@ int main()
 		}
 		
 		
-		
+	cout<<"The IP is valid";
 		
 		//cout<<a[0];
 	
