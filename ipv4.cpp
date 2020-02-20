@@ -107,6 +107,9 @@ int main()
 				}
 		}
 		
+
+                // TODO: check for range and preceding zeros for invalid ipv4
+
 		//int temp=0;
 		//for(int j=0;j<30;j++)
 		//	{
