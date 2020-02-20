@@ -10,13 +10,31 @@ void error(int a)
 	exit(1);
 }
 
+void checkRange(int tm)
+{
+	cout<<tm;
+	if (!(tm>=0 && tm<=255))
+	{
+		error(4);
+	}
+}
+
 int main()
 
 {
 	string s;
 	cin>>s;
-	int count=0,a[3],b[3],c[3],d[3],k=0;
+	int count=0,a[30],b[30],c[30],d[30],k=0;
 	int n = s.size();
+	
+	for(int i=0;i<30;i++)
+	{
+		a[i]=0;
+		b[i]=0;
+		c[i]=0;
+		d[i]=0;
+	}
+	
 	for(int i=0;i<n;i++)
 	{
 		if(s[i]=='.')
@@ -42,19 +60,19 @@ int main()
 					//cout<<s[j];
 					if(count==0)
 					{
-						a[k]=(int)s[j];
+						a[k]=(int)s[j]-48;
 						//cout<<(int)s[j]-48;
 						k++;
 					}
 					else if(count==1)
 					{
-						b[k]=(int)s[j];
+						b[k]=(int)s[j]-48;
 						//cout<<(int)s[j]-48;
 						k++;
 					}
 					else if(count==2)
 					{
-						c[k]=(int)s[j];
+						c[k]=(int)s[j]-48;
 						//cout<<(int)s[j]-48;
 						k++;
 					}
@@ -80,7 +98,7 @@ int main()
 		{
 			if (isdigit(s[j]) == 1)
 				{
-					d[k]=(int)s[j];
+					d[k]=(int)s[j]-48;
 					//cout<<(int)s[j]-48;
 					k++;
 				}
@@ -89,13 +107,18 @@ int main()
 				}
 		}
 		
-		
-	cout<<"The IP is valid";
+		//int temp=0;
+		//for(int j=0;j<30;j++)
+		//	{
+		//		temp=a[0]
+		//	}
+			
+			//checkRange(temp);
+			
+				
+		cout<<"The IP is valid";
 		
 		//cout<<a[0];
 	
 	return 0;
 }
-
-
-
