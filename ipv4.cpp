@@ -23,6 +23,7 @@ int main()
 
 {
 	string s;
+	int test=0;
 	cin>>s;
 	int count=0,a[30],b[30],c[30],d[30],k=0;
 	int n = s.size();
@@ -37,9 +38,18 @@ int main()
 	
 	for(int i=0;i<n;i++)
 	{
-		if(s[i]=='.')
+		if (test > 3)
+		{
+			error(6);
+		}
+		else if(s[i]=='.')
 		{
 			count++;
+			test=0;
+		}
+		else 
+		{
+			test++;	
 		}
 	}
 	if(count!=3)
@@ -107,21 +117,28 @@ int main()
 				}
 		}
 		
-
-                // TODO: check for range and preceding zeros for invalid ipv4
-
-		//int temp=0;
-		//for(int j=0;j<30;j++)
-		//	{
-		//		temp=a[0]
-		//	}
-			
-			//checkRange(temp);
+		if (a[0] == 0 && a[1] == 0)
+		{
+			error(7);
+		}
+		if (b[0] == 0 && b[1] == 0)
+		{
+			error(7);
+		}
+		if (c[0] == 0 && c[1] == 0)
+		{
+			error(7);
+		}
+		if (d[0] == 0 && d[1] == 0)
+		{
+			error(7);
+		}
+		
 			
 				
 		cout<<"The IP is valid";
 		
-		//cout<<a[0];
+
 	
 	return 0;
 }
