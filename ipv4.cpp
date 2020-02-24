@@ -26,6 +26,7 @@ int main()
 	int test=0;
 	cin>>s;
 	int count=0,a[30],b[30],c[30],d[30],k=0;
+	int ca=0,cb=0,cc=0,cd=0;
 	int n = s.size();
 	
 	for(int i=0;i<30;i++)
@@ -52,6 +53,35 @@ int main()
 			test++;	
 		}
 	}
+	int t1=0;
+	for(int i=0;i<n;i++)
+	{
+		if(s[i]=='.')
+		{
+			
+			if(t1==2)
+			{
+				if(s[i-2]=='0')
+				{
+					error(9);
+				}
+			}
+			else if(t1==3)
+			{
+				if(s[i-3]=='0' && s[i-2]=='0')
+				{
+					error(10);
+				}
+			}
+			t1=0;
+			
+		}	
+		else
+		{
+			t1++;
+		}
+	}
+	
 	if(count!=3)
 	{
 		error(1);
@@ -71,18 +101,21 @@ int main()
 					if(count==0)
 					{
 						a[k]=(int)s[j]-48;
+						ca++;
 						//cout<<(int)s[j]-48;
 						k++;
 					}
 					else if(count==1)
 					{
 						b[k]=(int)s[j]-48;
+						cb++;
 						//cout<<(int)s[j]-48;
 						k++;
 					}
 					else if(count==2)
 					{
 						c[k]=(int)s[j]-48;
+						cc++;
 						//cout<<(int)s[j]-48;
 						k++;
 					}
@@ -109,6 +142,7 @@ int main()
 			if (isdigit(s[j]) == 1)
 				{
 					d[k]=(int)s[j]-48;
+					cd++;
 					//cout<<(int)s[j]-48;
 					k++;
 				}
@@ -117,22 +151,9 @@ int main()
 				}
 		}
 		
-		if (a[0] == 0 && a[1] == 0)
-		{
-			error(7);
-		}
-		if (b[0] == 0 && b[1] == 0)
-		{
-			error(7);
-		}
-		if (c[0] == 0 && c[1] == 0)
-		{
-			error(7);
-		}
-		if (d[0] == 0 && d[1] == 0)
-		{
-			error(7);
-		}
+		cout<<a[0]<<" "<<a[1]<<" "<<a[2];
+		
+	
 		
 			
 				
@@ -142,3 +163,4 @@ int main()
 	
 	return 0;
 }
+
